@@ -1,0 +1,28 @@
+喵掌櫃換匯 — 檔案說明
+=====================
+
+這個資料夾裡有兩個版本，共用同一份貓咪圖片：
+
+  index.html        網頁版（用手機或電腦的瀏覽器打開）
+  line.html         LINE 版（放進 LINE 官方帳號，大半版面板）
+  cat-avatar.png    左上角的貓咪頭像（正方形）
+  cat-lying.png     黃色卡片上趴著的貓（長方形，寬：高 = 2：1）
+
+【怎麼換貓咪】
+1. 準備去背的 PNG 圖片，頭像用正方形，趴著的貓用寬是高兩倍的長方形。
+2. 把新圖片取一樣的檔名（cat-avatar.png、cat-lying.png），蓋掉資料夾裡的舊圖。
+3. 重新上傳這兩張圖。網頁版和 LINE 版會一起換成新的貓咪。
+   ※ LINE 有時會先顯示舊圖，把面板關掉再打開就好。
+
+【怎麼放上網】
+把「整個資料夾」上傳到同一個網站（例如 Vercel 或 Netlify），會拿到一個網址，例如：
+  https://你的網址/            → 網頁版
+  https://你的網址/line.html   → LINE 版（LIFF 的網址填這個）
+
+【LINE 版要多做的事】
+1. 在 LINE Developers 建立 LIFF，尺寸選 Tall，網址填上面的 line.html 網址。
+2. 打開 line.html，找到 const LIFF_ID = ""; 這一行，把 LIFF ID 貼進引號裡，再上傳一次。
+3. 在官方帳號的圖文選單加一顆按鈕，連結填 https://liff.line.me/你的LIFF ID
+
+注意：檔案要放上網才能用。直接在電腦上點兩下 index.html 也能打開試看看，
+但手機直接打開檔案可能不會動。
