@@ -5,8 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="喵掌櫃換匯">
-<link rel="apple-touch-icon" href="cat-avatar.png">
-<link rel="icon" href="cat-avatar.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#f8f7f4">
 <title>喵掌櫃換匯</title>
 <meta name="description" content="出國刷卡前，先讓掌櫃幫你算一下。即時匯率換算，含刷卡、換現金手續費。">
@@ -339,6 +342,8 @@ async function load(){
 }
 document.addEventListener("visibilitychange", () => { if (!document.hidden) load(); });
 render(); load(); setInterval(load, 30 * 60 * 1000);
+// 讓網頁版可以離線打開
+if ("serviceWorker" in navigator) { window.addEventListener("load", () => navigator.serviceWorker.register("/sw.js").catch(() => {})); }
 </script>
 </body>
 </html>
